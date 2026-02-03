@@ -11,7 +11,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: 'FRC',
     name: 'FRC - Redes y Comunicaciones',
-    docUrl: 'public/frc_12a.pdf',
+    docUrl: 'public/Ficha12A-FRC.pdf',
     groups: [
       { id: 'teo', name: 'TEORÍA', weight: 0.6, minGrade: 5 },
       { id: 'pra', name: 'PRÁCTICAS', weight: 0.4, minGrade: 5 }
@@ -24,7 +24,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: 'PCD',
     name: 'PCD - Programación Concurrente y Distribuida',
-    docUrl: 'public/pcd_12a.pdf',
+    docUrl: 'public/Ficha12A-PCD.pdf',
     groups: [
       { id: 'teo', name: 'TEORÍA', weight: 0.5, minGrade: 4 },
       { id: 'pra', name: 'PRÁCTICAS', weight: 0.5, minGrade: 4 }
@@ -39,7 +39,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: 'IASI',
     name: 'IASI - Inteligencia Artificial y Sistemas Inteligentes',
-    docUrl: 'public/iasi_12a.pdf',
+    docUrl: 'public/Ficha12A-IASI.pdf',
     groups: [
       { id: 'teo', name: 'TEORÍA', weight: 0.7, minGrade: 5 },
       { id: 'pro', name: 'PRÁCTICAS', weight: 0.2, minGrade: 5 },
@@ -54,7 +54,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: 'EC',
     name: 'EC - Estructura de Computadores',
-    docUrl: 'public/ec_12a.pdf',
+    docUrl: 'public/Ficha12A-EC.pdf',
     groups: [
       { id: 'teo', name: 'TEORÍA', weight: 0.5, minGrade: 5 },
       { id: 'pra', name: 'LABORATORIO', weight: 0.5, minGrade: 5 }
@@ -70,7 +70,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: 'GO',
     name: 'GO - Gestión de Organizaciones',
-    docUrl: 'public/go_12a.pdf',
+    docUrl: 'public/Ficha12A-GO.pdf',
     groups: [
       { id: 'be', name: 'EXAMEN', weight: 0.6, minGrade: 4 },
       { id: 'bec', name: 'EVAL. CONTINUA', weight: 0.4, minGrade: 0, dependsOnGroupId: 'be' }
