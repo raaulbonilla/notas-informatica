@@ -1,4 +1,3 @@
-
 export interface EvaluationPart {
   id: string;
   name: string;
@@ -20,7 +19,6 @@ export interface Subject {
   name: string;
   groups: SubjectGroup[];
   parts: EvaluationPart[];
-  docUrl?: string;
 }
 
 export interface SubjectGrades {

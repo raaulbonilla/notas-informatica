@@ -1,10 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
 import { SUBJECTS, STORAGE_KEY, APP_CONFIG } from './constants';
 import { State } from './types';
 import SubjectCard from './components/SubjectCard';
+import MobileSubjectRow from './components/MobileSubjectRow';
+import GradeModal from './components/GradeModal';
 
 const App: React.FC = () => {
+  const [selectedSubjectId, setSelectedSubjectId] = useState<string | null>(null);
+  
   const [gradesState, setGradesState] = useState<State>(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     let parsedSaved: State = {};
@@ -46,19 +49,21 @@ const App: React.FC = () => {
     }));
   };
 
+  const selectedSubject = SUBJECTS.find(s => s.id === selectedSubjectId);
+
   return (
-    <div className="h-screen w-screen flex flex-col bg-white overflow-hidden px-8 py-8 md:px-16 md:py-10">
+    <div className="h-screen w-screen flex flex-col bg-white overflow-hidden px-6 py-8 md:px-16 md:py-10">
       <header className="flex justify-between items-center mb-8 shrink-0">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-black uppercase leading-none">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-black uppercase leading-none">
             {APP_CONFIG.title}
           </h1>
-          <p className="text-[11px] text-gray-400 uppercase tracking-[0.3em] font-medium mt-2">
+          <p className="text-[10px] md:text-[11px] text-gray-400 uppercase tracking-[0.3em] font-medium mt-2">
             {APP_CONFIG.subtitle}
           </p>
         </div>
         
-        <div className="flex items-center gap-2.5 bg-[#e6f4ea] border border-[#ceead6] px-5 py-2 rounded-xl">
+        <div className="hidden sm:flex items-center gap-2.5 bg-[#e6f4ea] border border-[#ceead6] px-5 py-2 rounded-xl">
           <div className="w-2 h-2 rounded-full bg-[#34a853]"></div>
           <span className="text-[10px] font-bold text-[#137333] uppercase tracking-wide">
             AUTOSAVE ACTIVADO
@@ -66,7 +71,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main className="flex-grow flex flex-col gap-4 overflow-hidden">
+      <main className="hidden md:flex flex-grow flex-col gap-4 overflow-hidden">
         {SUBJECTS.map(subject => (
           <div key={subject.id} className="flex-1 min-h-0">
             <SubjectCard
@@ -77,6 +82,26 @@ const App: React.FC = () => {
           </div>
         ))}
       </main>
+
+      <main className="md:hidden flex-grow overflow-y-auto no-scrollbar pb-10">
+        {SUBJECTS.map(subject => (
+          <MobileSubjectRow
+            key={subject.id}
+            subject={subject}
+            grades={gradesState[subject.id]}
+            onClick={() => setSelectedSubjectId(subject.id)}
+          />
+        ))}
+      </main>
+
+      {selectedSubject && (
+        <GradeModal
+          subject={selectedSubject}
+          grades={gradesState[selectedSubject.id]}
+          onGradeChange={(partId, val) => handleGradeUpdate(selectedSubject.id, partId, val)}
+          onClose={() => setSelectedSubjectId(null)}
+        />
+      )}
     </div>
   );
 };

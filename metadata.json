@@ -1,4 +1,5 @@
 {
   "name": "Notas Ing.Informática",
+  "description": "A minimalist web application to track grades for the second semester of the second year of Computer Engineering.",
   "requestFramePermissions": []
 }

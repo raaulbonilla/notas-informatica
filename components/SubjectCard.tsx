@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Subject, SubjectGrades, SubjectStatus } from '../types';
 
@@ -101,20 +100,6 @@ const SubjectCard: React.FC<SubjectCardProps> = ({ subject, grades, onGradeChang
         <p className="text-[9px] text-gray-400 uppercase font-semibold tracking-tight leading-[1.1] max-w-full">
           {subject.name.split(' - ')[1] || subject.name}
         </p>
-        {subject.docUrl && (
-          <a 
-            href={subject.docUrl} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="mt-4 flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 hover:bg-black hover:text-white text-gray-400 transition-all duration-200"
-            title="Ver Ficha 12A"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-              <polyline points="14 2 14 8 20 8" />
-            </svg>
-          </a>
-        )}
       </div>
 
       <div className="flex-grow h-full flex items-center justify-start gap-12 px-10 overflow-x-auto no-scrollbar">
