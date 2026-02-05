@@ -67,7 +67,7 @@ const App: React.FC = () => {
         <div className="hidden sm:flex items-center gap-2.5 bg-[#e6f4ea] border border-[#ceead6] px-5 py-2 rounded-xl">
           <div className="w-2 h-2 rounded-full bg-[#34a853]"></div>
           <span className="text-[10px] font-bold text-[#137333] uppercase tracking-wide">
-            AUTOSAVE ACTIVADO
+            LOCAL-SAVE ACTIVADO
           </span>
         </div>
       </header>
