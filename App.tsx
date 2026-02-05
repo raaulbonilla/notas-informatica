@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { SUBJECTS, STORAGE_KEY, APP_CONFIG } from './constants';
 import { State } from './types';
 import SubjectCard from './components/SubjectCard';
@@ -102,6 +103,7 @@ const App: React.FC = () => {
           onClose={() => setSelectedSubjectId(null)}
         />
       )}
+      <Analytics />
     </div>
   );
 };
