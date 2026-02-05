@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { SUBJECTS, STORAGE_KEY, APP_CONFIG } from './constants';
 import { State } from './types';
 import SubjectCard from './components/SubjectCard';
@@ -104,6 +105,7 @@ const App: React.FC = () => {
         />
       )}
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 };
